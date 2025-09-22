@@ -1,18 +1,46 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
+import { useMotionValue, useSpring } from "motion/react";
+import { useFrame } from "@react-three/fiber";
 
 export function Astronaut(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/models/modle.glb");
   const { actions } = useAnimations(animations, group);
+
+  // Play animation if available
+  useEffect(() => {
+    if (animations.length > 0) {
+      actions[animations[0].name]?.play();
+    }
+  }, [actions, animations]);
+
+  // Motion values for floating effect
+  const yposition = useMotionValue(5);
+  const ySpring = useSpring(yposition, { damping: 40, stiffness: 80 });
+
+  useEffect(() => {
+    ySpring.set(-1);
+  }, [ySpring]);
+
+  // Update astronaut's Y position on every frame
+  useFrame(() => {
+    if (group.current) {
+      group.current.position.y = ySpring.get();
+    }
+  });
+
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      rotation={[-Math.PI / 2, -0.2, 2.2]}
+      scale={props.scale || 0.3}
+      position={props.position || [1.5, -1, 0]}
+    >
       <group name="Sketchfab_Scene">
-        <group
-          name="Sketchfab_model"
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={0.193}
-        >
+        <group name="Sketchfab_model">
           <group name="Root">
             <group name="metarig">
               <primitive object={nodes.metarig_rootJoint} />
@@ -76,20 +104,6 @@ export function Astronaut(props) {
                 material={materials["AstronautFallingTexture.png"]}
                 skeleton={nodes.Cube011_0.skeleton}
               />
-              <group name="Cube001" />
-              <group name="Cube005" />
-              <group name="Cube002" />
-              <group name="Plane" />
-              <group name="Cube008" />
-              <group name="Cube004" />
-              <group name="Cube003" />
-              <group name="Cube" />
-              <group
-                name="Cube009"
-                rotation={[-2.708, 0.013, -1.447]}
-                scale={1.307}
-              />
-              <group name="Cube011" />
             </group>
           </group>
         </group>
