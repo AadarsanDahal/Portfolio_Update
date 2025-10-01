@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import { useMotionValue, useSpring } from "motion/react";
 import { useFrame } from "@react-three/fiber";
 
-export function Astronaut(props) {
+export default function Astronaut(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/models/modle.glb");
   const { actions } = useAnimations(animations, group);

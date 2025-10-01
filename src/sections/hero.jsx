@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import HeroText from "../components/herotext";
 import ParallaxBackground from "../components/parallexbackground";
-import { Astronaut } from "../components/astronaut";
+import  Astronaut  from "../components/astronaut";
 import { Canvas, useFrame } from "@react-three/fiber"; // ✅ keep useFrame here
 import { Float } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
