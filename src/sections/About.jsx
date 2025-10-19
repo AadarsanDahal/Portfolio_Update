@@ -77,13 +77,18 @@ const About = () => {
               image="assets/logos/cplusplus.svg"
               containerRef={grid2Container}
             />
-            <a href="./terminal.html" target="">
-              <Card
-                style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-                image="assets/logos/terminal.svg"
-                containerRef={grid2Container}
-              />
-            </a>
+
+            <Card
+              onClick={() => window.open("./terminal.html")}
+              style={{
+                rotate: "-45deg",
+                top: "5%",
+                left: "10%",
+                cursor: "pointer",
+              }}
+              image="assets/logos/terminal.svg"
+              containerRef={grid2Container}
+            />
           </div>
         </div>
         {/* grid 3  */}

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-const Card = ({ style, text, image, containerRef }) => {
+
+const Card = ({ style, text, image, containerRef, onClick }) => {
   return image && !text ? (
     <motion.img
       className="absolute w-15 cursor-grab"
@@ -9,6 +10,7 @@ const Card = ({ style, text, image, containerRef }) => {
       drag
       dragConstraints={containerRef}
       dragElastic={1}
+      onClick={onClick}
     />
   ) : (
     <motion.div
@@ -18,6 +20,7 @@ const Card = ({ style, text, image, containerRef }) => {
       drag
       dragConstraints={containerRef}
       dragElastic={1}
+      onClick={onClick}
     >
       {text}
     </motion.div>

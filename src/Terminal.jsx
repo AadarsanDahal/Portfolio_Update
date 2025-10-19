@@ -8,6 +8,7 @@ export default function LinuxTerminal() {
     },
   ]);
   const [input, setInput] = useState("");
+  const [showToast, setShowToast] = useState(false);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
 
@@ -184,7 +185,7 @@ export default function LinuxTerminal() {
                 const text = e.target.textContent;
                 if (emailRegex.test(text)) {
                   navigator.clipboard.writeText("aadarsandahal@gmail.com");
-                  console.log("Email copied to clipboard!");
+                  setShowToast(true);
                 }
               }}
             >
