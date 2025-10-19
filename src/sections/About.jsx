@@ -1,42 +1,14 @@
 import React, { useRef, useState } from "react";
 import Card from "../components/Card";
 import { Globe } from "../components/Globe";
-import { ShimmerButton } from "../components/ShimmerButton";
-import Toast from "../components/Toast";
 import { Frameworks } from "../components/Frameworks";
+import CopyEmailButton from "../components/CopyEmailButton";
 
 const About = () => {
   const grid2Container = useRef(null);
-  const [toastVisible, setToastVisible] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
-  const [toastType, setToastType] = useState("success");
-
-  const showToast = (message, type = "success") => {
-    setToastMessage(message);
-    setToastType(type);
-    setToastVisible(true);
-  };
-
-  const handleCopyEmail = () => {
-    const email = "aadarsandahal@gmail.com";
-    navigator.clipboard
-      .writeText(email)
-      .then(() => {
-        showToast("Email copied to clipboard!", "success");
-      })
-      .catch(() => {
-        showToast("Failed to copy email", "error");
-      });
-  };
 
   return (
     <section className="c-space section-spacing">
-      <Toast
-        message={toastMessage}
-        isVisible={toastVisible}
-        onClose={() => setToastVisible(false)}
-        type={toastType}
-      />
       <h2 className="text-heading">About me </h2>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
@@ -134,15 +106,7 @@ const About = () => {
             <p className="text-center headtext">
               Do you want to start a project together?
             </p>
-
-            <ShimmerButton
-              shimmerColor="#d3d1d1ff"
-              background="rgba(0, 0, 0, 0.8)"
-              className=""
-              onClick={handleCopyEmail}
-            >
-              Copy Mail
-            </ShimmerButton>
+            <CopyEmailButton />
           </div>
         </div>
         {/* grid 5  */}

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import Toast from "./components/Toast";
 
 export default function LinuxTerminal() {
   const [history, setHistory] = useState([
@@ -9,7 +8,6 @@ export default function LinuxTerminal() {
     },
   ]);
   const [input, setInput] = useState("");
-  const [showToast, setShowToast] = useState(false);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
 
@@ -186,7 +184,7 @@ export default function LinuxTerminal() {
                 const text = e.target.textContent;
                 if (emailRegex.test(text)) {
                   navigator.clipboard.writeText("aadarsandahal@gmail.com");
-                  setShowToast(true);
+                  console.log("Email copied to clipboard!");
                 }
               }}
             >
@@ -195,12 +193,6 @@ export default function LinuxTerminal() {
           )}
         </div>
       ))}
-      <Toast
-        message="Email copied to clipboard!"
-        isVisible={showToast}
-        onClose={() => setShowToast(false)}
-        type="success"
-      />
 
       <div>
         <span style={{ color: "#C4A14E" }}>aadarsan</span>
