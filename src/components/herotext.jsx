@@ -13,7 +13,7 @@ const HeroText = () => {
       {/* Desktop view */}
       <div className="flex-col hidden md:flex c-space">
         <motion.h1
-          className="text-4xl font-medium"
+          className="text-2xl font-medium"
           variants={variants}
           initial="hidden"
           animate="visible"
@@ -23,7 +23,7 @@ const HeroText = () => {
         </motion.h1>
         <div className="flex flex-col items-start">
           <motion.p
-            className="text-5xl font-medium text-neutral-300"
+            className="text-4xl font-medium text-neutral-300"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -39,11 +39,11 @@ const HeroText = () => {
           >
             <FlipWords
               words={words} //Words to flip through
-              className="font-black text-white text-8xl"
+              className="font-black text-white text-7xl"
             />
           </motion.div>
           <motion.p
-            className="text-4xl font-medium text-neutral-300"
+            className="text-3xl font-medium text-neutral-300"
             variants={variants}
             initial="hidden"
             animate="visible"
