@@ -10,20 +10,7 @@ const TerminalApp = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100vh",
-        margin: 0,
-        padding: 0,
-        background: "linear-gradient(135deg, #06091f 0%, #161a31 100%)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: "hidden",
-        position: "relative",
-      }}
-    >
+    <div style={{ width: "100%", height: "100vh", margin: 0, padding: 0 }}>
       <LinuxTerminal />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import HeroText from "../components/herotext";
 import ParallaxBackground from "../components/parallexbackground";
-import  Astronaut  from "../components/astronaut";
+import Astronaut from "../components/astronaut";
 import { Canvas, useFrame } from "@react-three/fiber"; // ✅ keep useFrame here
 import { Float } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
@@ -12,7 +12,10 @@ import Loader from "../components/Loader";
 const Hero = () => {
   const isMobile = useMediaQuery({ query: "(maxWidth: 853px)" });
   return (
-    <section className="flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space">
+    <section
+      id="home"
+      className="flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space"
+    >
       <HeroText />
       <ParallaxBackground />
       <figure
