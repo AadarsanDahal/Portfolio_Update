@@ -111,7 +111,10 @@ export default function LinuxTerminal() {
     } else if (base === "exit") {
       output = "Redirecting to main portfolio...";
       setTimeout(() => {
-        window.location.href = "/index.html";
+        // Get current location and navigate to index.html in the same directory
+        const currentPath = window.location.pathname;
+        const basePath = currentPath.substring(0, currentPath.lastIndexOf("/"));
+        window.location.href = basePath + "/index.html";
       }, 1000);
     } else if (commands[base]) {
       const result = commands[base];
