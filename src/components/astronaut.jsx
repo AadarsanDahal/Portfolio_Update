@@ -5,7 +5,7 @@ import { useFrame } from "@react-three/fiber";
 
 export default function Astronaut(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models/modle.glb");
+  const { nodes, materials, animations } = useGLTF("./models/modle.glb");
   const { actions } = useAnimations(animations, group);
 
   // Play animation if available
@@ -112,4 +112,4 @@ export default function Astronaut(props) {
   );
 }
 
-useGLTF.preload("/models/modle.glb");
+useGLTF.preload("./models/modle.glb");
