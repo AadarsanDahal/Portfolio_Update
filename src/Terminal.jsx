@@ -99,7 +99,7 @@ export default function LinuxTerminal() {
     } else if (base === "sudo" && args[1] === "about") {
       // Create a download link for the CV
       const link = document.createElement("a");
-      link.href = "./Aadarsan_Dahal.pdf"; // Update this with your actual CV path
+      link.href = "/Aadarsan_Dahal.pdf"; // Update this with your actual CV path
       link.download = "AadarsanDahal_CV.pdf";
       output =
         "Initiating CV download...\n Please wait...\n Download should begin shortly!";
