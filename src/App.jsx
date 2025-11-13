@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./sections/navbar";
 import Hero from "./sections/hero";
 import About from "./sections/About";
+import MyWork from "./sections/MyWork";
 
 const App = () => {
   return (
@@ -13,13 +14,13 @@ const App = () => {
       {/* Placeholder for Work section */}
       <section id="work" className="min-h-screen c-space section-spacing">
         <h2 className="text-heading">My Work</h2>
-        {/* Add your work content here */}
+        <MyWork />
       </section>
 
-      {/* Placeholder for Contact section */}
+      {/* Placeholder for project section */}
       <section id="contact" className="min-h-screen c-space section-spacing">
-        <h2 className="text-heading">Contact Me</h2>
-        {/* Add your contact content here */}
+        <h2 className="text-heading">Projects</h2>
+        {/* Add your project content here */}
       </section>
 
       {/* You can uncomment and add more sections as needed
