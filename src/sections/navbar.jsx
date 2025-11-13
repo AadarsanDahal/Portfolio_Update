@@ -5,28 +5,26 @@ function Navigation({ setIsOpen }) {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolling, setIsScrolling] = useState(false);
 
-  // Function to determine which section is curre·ntly visible
+  // Function to determine which section is currently visible
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "work", "contact"];
+      const sections = ["home", "about", "work", "projects", "contact"];
+      const scrollPosition = window.scrollY + 100; // Add offset to improve detection
 
       // Find which section is currently most visible in the viewport
-      const current = sections.reduce((visible, sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (!section) return visible;
+      let current = "home"; // Default to home
 
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const scrollPosition = window.scrollY + 100; // Add offset to improve detection
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section) {
+          const sectionTop = section.offsetTop;
 
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          return sectionId;
+          if (scrollPosition >= sectionTop) {
+            current = sections[i];
+            break;
+          }
         }
-        return visible;
-      }, activeSection);
+      }
 
       setActiveSection(current);
     };
@@ -96,7 +94,8 @@ function Navigation({ setIsOpen }) {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "work", label: "Work" },
-    { id: "contact", label: "Projects" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -203,7 +202,7 @@ const Navbar = () => {
             <img
               src={isOpen ? "./assets/close.svg" : "./assets/menu.svg"}
               alt="menu toggle"
-              className="w-6 h-6"
+              classNames="w-6 h-6"
             />
           </button>
           <nav className="hidden sm:flex">
