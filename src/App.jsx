@@ -4,6 +4,7 @@ import Hero from "./sections/hero";
 import About from "./sections/About";
 import MyWork from "./sections/MyWork";
 import Projects from "./sections/Projects";
+import Contact from "./sections/contact";
 
 const App = () => {
   return (
@@ -21,19 +22,19 @@ const App = () => {
       {/* Projects section with Card components */}
       <Projects />
 
-      {/* Placeholder for contact section */}
-      <section id="contact" className="min-h-screen c-space section-spacing">
-        <h2 className="text-heading">Contact</h2>
-        {/* Add your contact content here */}
-      </section>
+      {/* Contact section */}
+      <Contact />
 
-      {/* You can uncomment and add more sections as needed
-      <section className="min-h-screen"></section>
-      <section className="min-h-screen"></section>
-      <section className="min-h-screen"></section>
-      <section className="min-h-screen"></section>
-      <section className="min-h-screen"></section>
-      <section className="min-h-screen"></section> */}
+      {/* Footer */}
+      <footer className="py-8 px-6 md:px-8 lg:px-12 border-t border-gray-800">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-gray-400 text-sm">
+              © 2025 Aadarsan Dahal. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

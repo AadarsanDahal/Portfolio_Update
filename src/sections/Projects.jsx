@@ -146,19 +146,16 @@ function Projects() {
     <section className="py-20 px-6 md:px-8 lg:px-12" id="projects">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Featured{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Projects
-            </span>
+            Featured Projects
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-2xl">
             A showcase of my latest work, featuring innovative solutions and
             creative implementations across various technologies and domains.
           </p>
