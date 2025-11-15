@@ -48,7 +48,7 @@ const projectsData = [
   {
     title: "Cube Satellite",
     description:
-      "A simulated satellite model using DHT and MPU sensors to collect environmental and motion data, displayed live on a web dashboard.",
+      "A simulated satellite model using DHT and MPU sensors to collect environmental and motion data, displayed live on dashboard.",
     tags: ["HTML", "Firebase", "ESP-8266"],
     image: "./assets/cubesat.png",
     links: [
@@ -68,7 +68,7 @@ const projectsData = [
   {
     title: "Kokro",
     description:
-      "Kokro is a smart cradle that soothes babies to sleep by mimicking natural rocking motions and alerts parents if the baby wakes up or needs attention.",
+      "A smart cradle which soothes babies to sleep and alerts parents if needed attentation. ",
     tags: ["JavaScript", "Chart.js", "CSS3"],
     image: "./assets/kokro.jpg",
     links: [
@@ -194,7 +194,7 @@ function Projects() {
             href="https://github.com/AadarsanDahal"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
